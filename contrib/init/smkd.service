@@ -1,0 +1,26 @@
+[Unit]
+Description=SMK's distributed currency daemon
+After=network.target
+
+[Service]
+User=smk
+Group=smk
+
+Type=forking
+PIDFile=/var/lib/smkd/smkd.pid
+
+ExecStart=/usr/bin/smkd -daemon -pid=/var/lib/smkd/smkd.pid \
+          -conf=/etc/smk/smk.conf -datadir=/var/lib/smkd
+
+ExecStop=-/usr/bin/smk-cli -conf=/etc/smk/smk.conf \
+         -datadir=/var/lib/smkd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

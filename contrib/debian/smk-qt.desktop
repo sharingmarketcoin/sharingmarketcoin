@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SMK
+Comment=SMK P2P Cryptocurrency
+Comment[fr]=SMK, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=SMK, eşten eşe kriptografik sanal para birimi
+Exec=smk-qt %u
+Terminal=false
+Type=Application
+Icon=smk128
+MimeType=x-scheme-handler/smk;
+Categories=Office;Finance;

@@ -1,1 +1,1 @@
-# sharingmarketcoin
+* Sharingmarket
